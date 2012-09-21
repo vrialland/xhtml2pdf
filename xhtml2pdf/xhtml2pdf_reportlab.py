@@ -554,8 +554,8 @@ class PmlParagraph(Paragraph, PmlMaxHeightMixIn):
 
         style = self.style
 
-        self.deltaWidth = style.paddingLeft + style.paddingRight + style.borderLeftWidth + style.borderRightWidth
-        self.deltaHeight = style.paddingTop + style.paddingBottom + style.borderTopWidth + style.borderBottomWidth
+        self.deltaWidth = style.paddingLeft + style.paddingRight - style.borderLeftWidth - style.borderRightWidth
+        self.deltaHeight = style.paddingTop + style.paddingBottom - style.borderTopWidth - style.borderBottomWidth
 
         # reduce the available width & height by the padding so the wrapping
         # will use the correct size
